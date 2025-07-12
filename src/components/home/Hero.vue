@@ -1,0 +1,41 @@
+<template>
+  <div class="container">
+    <div class="rounded-2xl h-[774px] bg-dark p-10 flex flex-col justify-between relative overflow-hidden">
+      <video-background
+        src="https://glassgtn.ru/wp-content/themes/ag/assets/video.MP4"
+        poster="/img/video_poster.png"
+        class="video-bg"
+      />
+      <div class="relative">
+        <h1 class="text-white font-halvar text-5xl uppercase mb-6 font-bold">
+          <span class="text-primary">Детейлинг центр №1 </span><br>
+          в Ленинградской области
+        </h1>
+        <p class="text-white text-lg">
+          Мы оказываем весь спектр услуг, в котором  <br>
+          нуждается Ваш автомобиль: тонировка, замена <br>
+          и ремонт автостекол, оклейка защитной <br>
+          пленкой и многое другое
+        </p>
+      </div>
+
+      <button class="secondary-btn !px-10 w-fit relative">
+        Позвонить нам
+      </button>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+
+</script>
+
+<style scoped>
+.video-bg {
+    position: absolute !important;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+</style>

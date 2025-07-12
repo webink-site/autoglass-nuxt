@@ -1,0 +1,84 @@
+@config "../../tailwind.config.js";
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Halvar';
+  src: url('/fonts/HalvarBreit-XBd.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halvar';
+  src: url('/fonts/HalvarBreit-Md.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Suisse';
+  src: url('/fonts/SuisseIntl-Regular.otf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suisse';
+  src: url('/fonts/SuisseIntl-Book.otf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@layer base {
+  body {
+    @apply bg-black font-suisse;
+  }
+}
+
+@layer utilities{
+  .bg-glass{
+    @apply bg-[#808080]/12 backdrop-blur-lg border
+  }
+  .primary-btn{
+    @apply text-white py-3 px-4 bg-primary rounded-xl hover:bg-primary_dark text-sm
+  }
+  .secondary-btn{
+    @apply text-black py-3 px-4 bg-white rounded-xl hover:bg-light text-sm
+  }
+}
+
+button, a {
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.glass-border-gradient {
+  position: relative;
+  z-index: 0;
+  border-radius: 1rem; /* скругление */
+  background: rgba(128, 128, 128, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+.glass-border-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1.5px; /* толщина границы */
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .6), rgba(25, 25, 25, 1));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  pointer-events: none;
+}
