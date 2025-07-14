@@ -74,6 +74,7 @@ button, a {
 .glass-border-gradient::before {
   content: "";
   position: absolute;
+  transition: all .3s ease;
   inset: 0;
   padding: 1.5px; /* толщина границы */
   border-radius: inherit;

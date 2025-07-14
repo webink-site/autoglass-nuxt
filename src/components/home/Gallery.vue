@@ -15,7 +15,8 @@
       <div
         v-for="i in 10"
         :key="i"
-        class="h-[40rem] w-[26rem] shrink-0 mr-3"
+        class="h-[40rem] w-[26rem] shrink-0 mr-3 cursor-pointer"
+        @click="showLightbox = true"
       >
         <img
           src="/img/gl.png"
@@ -24,11 +25,16 @@
         >
       </div>
     </Vue3Marquee>
+    <teleport to="body">
+      <transition name="fade-slide">
+        <UiLigtbox v-model:show-lightbox="showLightbox" />
+      </transition>
+    </teleport>
   </section>
 </template>
 
 <script setup lang="ts">
-
+const showLightbox = ref(false)
 </script>
 
 <style scoped>

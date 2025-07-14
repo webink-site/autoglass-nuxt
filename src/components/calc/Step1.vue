@@ -1,118 +1,100 @@
 <template>
-  <div class="space-y-6">
-    <p class="text-white mb-4">
-      Укажите тип ТС
-    </p>
-    <div class="grid grid-cols-3 gap-2">
-      <div
-        v-for="(item, idx) in types"
-        :key="idx"
-        class="glass-border-gradient p-2 text-center space-y-2"
-      >
-        <img
-          :src="item.icon"
-          alt=""
-          class="mx-auto"
+  <div>
+    <div class="space-y-6 mb-6">
+      <h3 class="font-halvar text-lg text-white leading-5">
+        Рассчитать стоимость на оклейку кузова
+      </h3>
+    </div>
+    <div class="space-y-6">
+      <p class="text-white mb-4">
+        Укажите тип ТС
+      </p>
+      <div class="grid grid-cols-3 gap-2">
+        <div
+          v-for="(item, idx) in types"
+          :key="idx"
+          class="glass-border-gradient p-2 text-center space-y-2 cursor-pointer select-none"
+          :class="{ active: selectedType === item.title }"
+          @click="selectedType = item.title"
         >
-        <p class="text-sm text-white">
-          {{ item.title }}
-        </p>
+          <img
+            :src="item.icon"
+            alt=""
+            class="mx-auto"
+          >
+          <p class="text-sm text-white">
+            {{ item.title }}
+          </p>
+        </div>
       </div>
-    </div>
-    <p class="text-white mb-4">
-      Пакет оклейки
-    </p>
-    <div class="flex gap-2 flex-wrap">
+      <p class="text-white mb-4">
+        Пакет оклейки
+      </p>
+      <div class="flex gap-2 flex-wrap">
+        <button
+          v-for="(item, idx) in packages"
+          :key="idx"
+          class="outlined-btn"
+          :class="{ 'bg-primary !border-primary': [...selectedElements].sort((a, b) => a - b).join('') === item.elements.join('') }"
+          @click="selectedElements = [...item.elements]"
+        >
+          {{ item.title }}
+        </button>
+      </div>
+      <p class="text-white mb-4">
+        Выберите элемент
+      </p>
+      <div class="flex gap-2 flex-wrap">
+        <button
+          v-for="(item, idx) in elements"
+          :key="idx"
+          class="outlined-btn"
+          :class="{ 'bg-primary !border-primary': selectedElements.includes(item.id) }"
+          @click="handleElement(item.id)"
+        >
+          {{ item.title }}
+        </button>
+      </div>
       <button
-        v-for="(item, idx) in packages"
-        :key="idx"
-        class="outlined-btn"
+        class="w-full primary-btn mb-2.5"
+        :disabled="!selectedType || !selectedElements.length"
+        @click="emit('changeSlide')"
       >
-        {{ item.title }}
+        Следующий шаг
       </button>
+      <p class="text-white text-center">
+        <span class="text-primary">1</span> из 3
+      </p>
     </div>
-    <p class="text-white mb-4">
-      Выберите элемент
-    </p>
-    <div class="flex gap-2 flex-wrap">
-      <button
-        v-for="(item, idx) in elements"
-        :key="idx"
-        class="outlined-btn"
-      >
-        {{ item }}
-      </button>
-    </div>
-    <button
-      class="w-full primary-btn mb-2.5"
-      @click="emit('changeSlide')"
-    >
-      Следующий шаг
-    </button>
-    <p class="text-white text-center">
-      <span class="text-primary">1</span> из 3
-    </p>
   </div>
 </template>
 
 <script setup lang="ts">
-import ic1 from '/img/icons/car.svg'
-import ic2 from '/img/icons/jeep.svg'
-import ic3 from '/img/icons/business.svg'
-
 const emit = defineEmits(['changeSlide'])
 
-const types = [
-  {
-    title: 'Легковой',
-    icon: ic1,
-  },
-  {
-    title: 'Кроссовер',
-    icon: ic2,
-  },
-  {
-    title: 'Бизнес-класс',
-    icon: ic3,
-  },
-]
+const selectedType = defineModel<null | string>('selectedType')
+const selectedElements = defineModel<number[]>('selectedElements', { default: [] })
 
-const packages = [
-  {
-    title: 'Пакет Премиум',
-    elements: [],
-  },
-  {
-    title: 'Полная перетяжка',
-    elements: [],
-  },
-]
+type Props = {
+  types: { title: string, icon: string }[]
+  packages: { title: string, elements: number[] }[]
+  elements: { title: string, id: number, price: number }[]
+}
+const { types, packages, elements } = defineProps<Props>()
 
-const elements = [
-  'Капот',
-  'Крылья передние',
-  'Бампер передний',
-  'Бампер задний',
-  'Фары передние',
-  'Зеркала',
-  'Двери передние',
-  'Двери задние',
-  'Крыша',
-  'Крыша багажника',
-  'Крылья задние',
-  'Пороги',
-  'Ниши под ручками 2шт',
-  'Полоса на капот',
-  'Полоса на крышу',
-  'Ниши под ручками 4шт',
-  'Стойки лобового',
-  'Расширители колесных арок',
-  'Дверные проемы 2шт',
-  'Дверные проемы 4шт',
-  'Погрузочная зона багажника',
-]
+const handleElement = (id: number) => {
+  if (!selectedElements.value.includes(id)) {
+    selectedElements.value.push(id)
+  }
+  else {
+    const indexInArr = selectedElements.value.indexOf(id)
+    selectedElements.value.splice(indexInArr, 1)
+  }
+}
 </script>
 
 <style scoped>
-
+.active.glass-border-gradient::before{
+  background: #F24944 !important;
+}
 </style>
