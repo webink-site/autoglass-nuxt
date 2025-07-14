@@ -1,7 +1,7 @@
 <template>
   <section class="pt-[100px]">
     <div class="container">
-      <h2 class="font-halvar text-4xl text-white mb-4 font-bold text-center">
+      <h2 class="font-halvar text-4xl text-white mb-4 text-center">
         Галерея работ
       </h2>
       <p class="text-neutral-600 mb-10 text-center">

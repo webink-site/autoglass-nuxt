@@ -2,7 +2,7 @@
   <div class="pt-[100px]">
     <div class="container">
       <div class="bg-linear-100 from-primary_light to-primary text-center px-4 py-[90px] rounded-2xl">
-        <h2 class="font-halvar text-4xl text-white text-center mb-4 font-bold">
+        <h2 class="font-halvar text-4xl text-white text-center mb-4">
           Остались вопросы?
         </h2>
         <p class="text-white text-center mb-6">
