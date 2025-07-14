@@ -29,16 +29,25 @@
             ул. 7-ой Армии 22, Гатчина
           </p>
           <a class="text-white hover:text-primary">+ 7 (921) 637-67-04</a>
-          <button class="primary-btn">
+          <button
+            class="primary-btn"
+            @click="showCalc = true"
+          >
             Рассчитать стоимость
           </button>
         </div>
       </div>
     </div>
+    <teleport to="body">
+      <transition name="fade-slide">
+        <CalcMain v-model:dialog="showCalc" />
+      </transition>
+    </teleport>
   </div>
 </template>
 
 <script setup lang="ts">
+const showCalc = ref(false)
 const navs = [
   {
     title: 'Услуги',

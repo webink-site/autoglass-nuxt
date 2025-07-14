@@ -1,15 +1,11 @@
 <template>
-  <div class="mt-12">
-    <HomeHero />
-    <HomeAdvantages />
+  <div>
     <HomeServices />
-    <HomeGallery />
     <HomeVoprosy />
   </div>
 </template>
 
 <script setup lang="ts">
-
 </script>
 
 <style scoped>

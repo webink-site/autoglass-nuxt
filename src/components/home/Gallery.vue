@@ -1,5 +1,5 @@
 <template>
-  <section class="py-[100px]">
+  <section class="pt-[100px]">
     <div class="container">
       <h2 class="font-halvar text-4xl text-white mb-4 font-bold text-center">
         Галерея работ
@@ -8,11 +8,14 @@
         Работы, которыми мы гордимся
       </p>
     </div>
-    <div class="flex gap-3 overflow-x-hidden">
+    <Vue3Marquee
+      :pause-on-hover="true"
+      :duration="50"
+    >
       <div
         v-for="i in 10"
         :key="i"
-        class="h-[40rem] w-[26rem] shrink-0"
+        class="h-[40rem] w-[26rem] shrink-0 mr-3"
       >
         <img
           src="/img/gl.png"
@@ -20,7 +23,7 @@
           class="h-full w-full object-cover"
         >
       </div>
-    </div>
+    </Vue3Marquee>
   </section>
 </template>
 

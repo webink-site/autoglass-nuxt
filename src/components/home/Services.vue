@@ -29,7 +29,8 @@
             <p class="font-halvar text-lg text-white leading-5 relative">
               {{ item.title }}
             </p>
-          </div></nuxt-link>
+          </div>
+        </nuxt-link>
       </div>
     </div>
   </section>
