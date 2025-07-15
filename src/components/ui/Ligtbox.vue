@@ -5,11 +5,12 @@
     @click="showLightbox = false"
   >
     <div
+      v-if="selectedPhoto !== null"
       class="h-[86%] relative"
       @click.stop
     >
       <img
-        src="/img/gl.png"
+        :src="images[selectedPhoto]"
         alt=""
         class="object-cover h-full w-auto mx-auto"
       >
@@ -26,7 +27,10 @@
 <script setup lang="ts">
 import { X } from 'lucide-vue-next'
 
+const { images } = defineProps<{ images: string[] }>()
+
 const showLightbox = defineModel<boolean>('showLightbox')
+const selectedPhoto = defineModel<null | number>('selectedPhoto', { default: null })
 </script>
 
 <style scoped>

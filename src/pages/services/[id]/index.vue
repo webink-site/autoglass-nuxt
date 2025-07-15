@@ -3,6 +3,7 @@
     <ServicesHero />
     <ServicesAdvantages />
     <ServicesAbout />
+    <ServicesPrices />
     <HomeGallery />
     <HomeVoprosy />
   </div>
