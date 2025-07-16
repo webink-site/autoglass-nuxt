@@ -18,6 +18,7 @@
     "nuxt": "^3.17.6",
     "nuxt-swiper": "^2.0.1",
     "tailwindcss": "^4.1.11",
+    "v-gsap-nuxt": "^1.4.4",
     "vue": "^3.5.17",
     "vue-responsive-video-background-player": "^2.4.1",
     "vue-router": "^4.5.1",

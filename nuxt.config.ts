@@ -2,7 +2,12 @@
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxt/image', 'nuxt-swiper'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/image',
+    'nuxt-swiper',
+    'v-gsap-nuxt',
+  ],
   components: ['~/src/components'],
   devtools: { enabled: true },
   css: ['~/src/assets/style.css'],

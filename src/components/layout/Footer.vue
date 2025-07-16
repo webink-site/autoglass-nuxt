@@ -1,7 +1,9 @@
 <template>
   <div class="pt-4 mb-6 relative z-20">
     <div class="container">
-      <div class="glass-border-gradient p-8">
+      <div
+        class="glass-border-gradient p-8"
+      >
         <div class="grid grid-cols-12 gap-8">
           <nuxt-link
             to="/"

@@ -1,11 +1,17 @@
 <template>
   <section class="pt-[100px]">
     <div class="container">
-      <h2 class="font-halvar text-4xl text-white mb-4">
-        Услуги
+      <h2
+        v-gsap.entrance.slide-bottom
+        class="font-halvar text-4xl text-white mb-4"
+      >
+        {{ title }}
       </h2>
-      <p class="text-neutral-600 mb-10">
-        Оказываем услуги разных видов сложности
+      <p
+        v-gsap.entrance.slide-bottom
+        class="text-neutral-600 mb-10"
+      >
+        {{ subtitle }}
       </p>
       <div class="grid grid-cols-12 gap-3">
         <nuxt-link
@@ -37,6 +43,14 @@
 </template>
 
 <script setup lang="ts">
+const {
+  title = 'Услуги',
+  subtitle = 'Оказываем услуги разных видов сложности',
+} = defineProps<{
+  title?: string
+  subtitle?: string
+}>()
+
 const services = [
   {
     title: 'Автовинил',

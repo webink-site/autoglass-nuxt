@@ -9,19 +9,23 @@
           Проекты, которыми мы гордимся
         </p>
         <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
-          <div
+          <nuxt-link
             v-for="item in 5"
             :key="item"
-            class="col-span-1"
+            :to="`/projects/123`"
           >
-            <img
-              class="aspect-square object-cover rounded-xl mb-6"
-              src="/img/gl.png"
+            <div
+              class="col-span-1"
             >
-            <p class="font-halvar text text-white leading-5 mb-8">
-              Полировка Cherry TiggoProMax
-            </p>
-          </div>
+              <img
+                class="aspect-square object-cover rounded-xl mb-6"
+                src="/img/gl.png"
+              >
+              <p class="font-halvar text text-white leading-5 mb-8">
+                Полировка Cherry TiggoProMax
+              </p>
+            </div>
+          </nuxt-link>
         </div>
       </div>
     </section>

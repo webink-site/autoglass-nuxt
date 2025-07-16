@@ -1,5 +1,7 @@
 <template>
-  <section>
+  <section
+    v-gsap.entrance.slide-bottom
+  >
     <div class="container">
       <div class="rounded-2xl h-[774px] bg-dark p-10 flex flex-col justify-between relative overflow-hidden">
         <video-background
@@ -7,12 +9,19 @@
           poster="/img/video_poster.png"
           class="video-bg"
         />
-        <div class="relative">
-          <h1 class="text-white font-halvar text-5xl uppercase mb-6 font-bold">
+        <div
+          v-gsap.entrance.slide-top.delay-700
+          class="relative"
+        >
+          <h1
+            class="text-white font-halvar text-5xl uppercase mb-6 font-bold"
+          >
             <span class="text-primary">Детейлинг центр №1 </span><br>
             в Ленинградской области
           </h1>
-          <p class="text-white text-lg">
+          <p
+            class="text-white text-lg"
+          >
             Мы оказываем весь спектр услуг, в котором  <br>
             нуждается Ваш автомобиль: тонировка, замена <br>
             и ремонт автостекол, оклейка защитной <br>
@@ -20,7 +29,10 @@
           </p>
         </div>
 
-        <button class="secondary-btn !px-10 w-fit relative">
+        <button
+          v-gsap.entrance.slide-bottom.delay-600
+          class="secondary-btn !px-10 w-fit relative"
+        >
           Позвонить нам
         </button>
       </div>

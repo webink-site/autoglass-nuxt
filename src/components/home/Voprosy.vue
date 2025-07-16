@@ -1,14 +1,26 @@
 <template>
   <div class="pt-[100px]">
     <div class="container">
-      <div class="bg-linear-100 from-primary_light to-primary text-center px-4 py-[90px] rounded-2xl">
-        <h2 class="font-halvar text-4xl text-white text-center mb-4">
+      <div
+        v-gsap.entrance.slide-bottom
+        class="bg-linear-100 from-primary_light to-primary text-center px-4 py-[90px] rounded-2xl"
+      >
+        <h2
+          v-gsap.entrance.slide-bottom.delay-200
+          class="font-halvar text-4xl text-white text-center mb-4"
+        >
           Остались вопросы?
         </h2>
-        <p class="text-white text-center mb-6">
+        <p
+          v-gsap.entrance.slide-bottom.delay-200
+          class="text-white text-center mb-6"
+        >
           Наши эксперты готовы предоставить <br> консультации по всем аспектам — от замена <br> и ремонта стекл, до шумоизоляции
         </p>
-        <button class="secondary-btn !px-14">
+        <button
+          v-gsap.entrance.slide-top.delay-200
+          class="secondary-btn !px-14"
+        >
           Позвонить нам
         </button>
       </div>

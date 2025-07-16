@@ -2,10 +2,16 @@
 <template>
   <section class="pt-[100px]">
     <div class="container">
-      <h2 class="font-halvar text-4xl text-white text-center mb-4">
+      <h2
+        v-gsap.entrance.slide-bottom
+        class="font-halvar text-4xl text-white text-center mb-4"
+      >
         Почему выбирают нас?
       </h2>
-      <p class="text-neutral-500 text-center mb-10">
+      <p
+        v-gsap.entrance.slide-bottom
+        class="text-neutral-500 text-center mb-10"
+      >
         Почему клиенты к нам возвращаются
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
