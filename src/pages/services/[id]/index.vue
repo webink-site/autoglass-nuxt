@@ -6,6 +6,9 @@
     <ServicesPrices />
     <HomeGallery />
     <HomeVoprosy />
+    <teleport to="body">
+      <ServicesFixedReels />
+    </teleport>
   </div>
 </template>
 
