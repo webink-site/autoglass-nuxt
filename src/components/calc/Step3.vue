@@ -23,8 +23,14 @@
       <UiCheckbox
         v-model:selected="checked"
         custom-id="select-all"
-        label="Я даю согласие на обработку персональных данных"
-      />
+      >
+        <template #label>
+          Я даю согласие на обработку <nuxt-link
+            to="privacy-policy"
+            class="text-primary hover:opacity-70"
+          >персональных данных</nuxt-link>
+        </template>
+      </UiCheckbox>
     </div>
     <button
       class="w-full primary-btn mb-2.5 mt-6"

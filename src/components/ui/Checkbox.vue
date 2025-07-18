@@ -19,7 +19,7 @@
       class="cursor-pointer ml-2 select-none text-white"
       :for="customId"
     >
-      {{ label }}
+      <slot name="label" />
     </label>
   </div>
 </template>
@@ -31,9 +31,8 @@ const emit = defineEmits(['onChange'])
 
 type Props = {
   customId: string
-  label: string
 }
-const { customId, label } = defineProps<Props>()
+const { customId } = defineProps<Props>()
 
 const selected = defineModel<boolean>('selected')
 </script>
