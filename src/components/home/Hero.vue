@@ -2,8 +2,8 @@
   <section
     v-gsap.entrance.slide-bottom
   >
-    <div class="container">
-      <div class="rounded-2xl h-[774px] bg-dark p-10 flex flex-col justify-between relative overflow-hidden">
+    <div class="sm:container">
+      <div class="sm:rounded-2xl h-[774px] bg-dark p-4 sm:p-10 flex flex-col justify-between relative overflow-hidden">
         <video-background
           src="https://glassgtn.ru/wp-content/themes/ag/assets/video.MP4"
           poster="/img/video_poster.png"
@@ -14,7 +14,7 @@
           class="relative"
         >
           <h1
-            class="text-white font-halvar text-5xl uppercase mb-6 font-bold"
+            class="text-white font-halvar text-4xl sm:text-5xl uppercase mb-6 font-bold"
           >
             <span class="text-primary">Детейлинг центр №1 </span><br>
             в Ленинградской области
@@ -22,9 +22,9 @@
           <p
             class="text-white text-lg"
           >
-            Мы оказываем весь спектр услуг, в котором  <br>
-            нуждается Ваш автомобиль: тонировка, замена <br>
-            и ремонт автостекол, оклейка защитной <br>
+            Мы оказываем весь спектр услуг, в котором  <br class="hidden sm:block">
+            нуждается Ваш автомобиль: тонировка, замена <br class="hidden sm:block">
+            и ремонт автостекол, оклейка защитной <br class="hidden sm:block">
             пленкой и многое другое
           </p>
         </div>

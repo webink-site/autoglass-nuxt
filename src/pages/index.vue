@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-12">
+  <div class="sm:mt-12">
     <HomeHero />
     <HomeAdvantages />
     <HomeServices />

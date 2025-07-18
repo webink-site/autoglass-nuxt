@@ -1,5 +1,5 @@
 <template>
-  <div class="!sticky top-10 left-0 w-full z-30">
+  <div class="hidden sm:block sticky top-10 left-0 w-full z-30">
     <div class="container">
       <div class="glass-border-gradient px-6 py-4 rounded-2xl flex justify-between items-center">
         <div class="flex items-center gap-14">
