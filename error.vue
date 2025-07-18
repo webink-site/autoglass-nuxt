@@ -22,6 +22,12 @@
 
 <script setup lang="ts">
 defineProps<{ error: { statusCode: number } }>()
+
+onMounted(() => {
+  if (import.meta.client) {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+})
 </script>
 
 <style scoped>

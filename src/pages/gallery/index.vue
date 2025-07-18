@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="pt-[100px]">
+    <section class="pt-12 sm:pt-[100px]">
       <div class="container">
         <h2 class="font-halvar text-4xl text-white mb-4 font-bold">
           Галерея работ
@@ -8,15 +8,13 @@
         <p class="text-neutral-600 mb-10">
           Работы, которыми мы гордимся
         </p>
-        <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
           <div
             v-for="(item, idx) in images"
             :key="idx"
             class="cursor-pointer col-span-1"
             @click="showLightbox = true; selectedPhoto = idx"
           >
-            <!--
-            :class="idx < 3 ? 'col-span-4' : 'col-span-3'" -->
             <img
               class="object-cover rounded-xl w-full h-full"
               :src="item"
@@ -28,8 +26,6 @@
             class="cursor-pointer col-span-1"
             @click="showLightbox = true; selectedPhoto = idx"
           >
-            <!--
-            :class="idx < 3 ? 'col-span-4' : 'col-span-3'" -->
             <img
               class="object-cover rounded-xl w-full h-full"
               :src="item"

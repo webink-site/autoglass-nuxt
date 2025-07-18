@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-[100px]">
+  <div class="pt-12 sm:pt-[100px]">
     <ProjectsGallery />
     <HomeServices
       title="Оказанные услуги"

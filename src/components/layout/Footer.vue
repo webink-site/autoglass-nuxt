@@ -4,7 +4,7 @@
       <div
         class="glass-border-gradient p-8"
       >
-        <div class="grid grid-cols-12 gap-8">
+        <div class="grid grid-cols-3 sm:grid-cols-12 gap-8">
           <nuxt-link
             to="/"
             class="col-span-3"
@@ -12,7 +12,7 @@
             <img
               src="/img/agred.svg"
               alt=""
-              class="!h-24"
+              class="!h-12 sm:!h-24"
             >
           </nuxt-link>
           <div class="col-span-3">
@@ -35,7 +35,7 @@
             <h5 class="text-neutral-600 font-halvar text-xl mb-2.5">
               Контакты
             </h5>
-            <ul class="space-y-3 mb-12">
+            <ul class="space-y-3 sm:mb-12">
               <li class="text-white">
                 ул. 7-ой Армии 22, Гатчина
               </li>
@@ -46,7 +46,7 @@
                 >+ 7 (921) 637-67-04</a>
               </li>
             </ul>
-            <button class="secondary-btn">
+            <button class="secondary-btn w-full sm:w-fit hidden sm:block">
               Проложить маршрут на карте
             </button>
           </div>
@@ -54,7 +54,7 @@
             <h5 class="text-neutral-600 font-halvar text-xl mb-2.5">
               Социальные сети
             </h5>
-            <ul class="space-y-3 ">
+            <ul class="space-y-3">
               <li
                 v-for="(item, idx) in socials"
                 :key="idx"
@@ -66,8 +66,11 @@
                 >{{ item.title }}</a>
               </li>
             </ul>
+            <button class="secondary-btn w-full sm:w-fit sm:hidden mt-8">
+              Проложить маршрут на карте
+            </button>
           </div>
-          <div class="col-span-full">
+          <div class="col-span-full hidden sm:block">
             <img
               src="/img/footer.svg"
               class="w-full"

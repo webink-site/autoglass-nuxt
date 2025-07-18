@@ -3,7 +3,7 @@
     v-gsap.entrance.slide-bottom
   >
     <div class="sm:container">
-      <div class="sm:rounded-2xl h-[774px] bg-dark p-4 sm:p-10 flex flex-col justify-between relative overflow-hidden">
+      <div class="rounded-b-2xl sm:rounded-2xl h-[600px] sm:h-[774px] bg-dark p-4 sm:p-10 flex flex-col justify-between relative overflow-hidden">
         <video-background
           src="https://glassgtn.ru/wp-content/themes/ag/assets/video.MP4"
           poster="/img/video_poster.png"
@@ -14,7 +14,7 @@
           class="relative"
         >
           <h1
-            class="text-white font-halvar text-4xl sm:text-5xl uppercase mb-6 font-bold"
+            class="text-white font-halvar text-3xl sm:text-5xl uppercase mb-6 font-bold"
           >
             <span class="text-primary">Детейлинг центр №1 </span><br>
             в Ленинградской области
@@ -31,7 +31,7 @@
 
         <button
           v-gsap.entrance.slide-bottom.delay-600
-          class="secondary-btn !px-10 w-fit relative"
+          class="secondary-btn !px-10 w-full sm:w-fit relative"
         >
           Позвонить нам
         </button>

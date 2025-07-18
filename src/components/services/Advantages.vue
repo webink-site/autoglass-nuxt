@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <section class="pt-[100px]">
+  <section class="pt-12 sm:pt-[100px]">
     <div class="container">
       <h2 class="font-halvar text-4xl text-white mb-4">
         Почему выбирают нас?

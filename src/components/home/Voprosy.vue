@@ -15,7 +15,7 @@
           v-gsap.entrance.slide-bottom.delay-200
           class="text-white text-center mb-6"
         >
-          Наши эксперты готовы предоставить <br> консультации по всем аспектам — от замена <br> и ремонта стекл, до шумоизоляции
+          Наши эксперты готовы предоставить <br class="hidden sm:block"> консультации по всем аспектам — от замена <br class="hidden sm:block"> и ремонта стекл, до шумоизоляции
         </p>
         <button
           v-gsap.entrance.slide-top.delay-200

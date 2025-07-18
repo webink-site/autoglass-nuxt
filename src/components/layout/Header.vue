@@ -1,4 +1,5 @@
 <template>
+  <LayoutMobileMenu v-model:show-calc="showCalc" />
   <div class="hidden sm:block sticky top-10 left-0 w-full z-30">
     <div class="container">
       <div class="glass-border-gradient px-6 py-4 rounded-2xl flex justify-between items-center">
@@ -16,8 +17,9 @@
               :key="index"
             >
               <nuxt-link
-                class="!text-white hover:!text-primary"
+                class="text-white hover:text-primary"
                 :to="item.link"
+                exact-active-class="!text-primary"
               >
                 {{ item.title }}
               </nuxt-link>

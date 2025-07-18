@@ -22,12 +22,12 @@
       <div
         v-for="(item, idx) in images"
         :key="idx"
-        class="h-[40rem] w-[26rem] shrink-0 mr-3 cursor-pointer"
+        class="h-[26rem] sm:h-[40rem] sm:w-[26rem] shrink-0 mr-3 cursor-pointer"
         @click="showLightbox = true; selectedPhoto = idx"
       >
         <img
           :src="item"
-          class="h-full w-full object-cover"
+          class="h-full w-full object-cover rounded-2xl"
         >
       </div>
     </Vue3Marquee>

@@ -1,8 +1,8 @@
 <template>
   <section>
-    <div class="container">
-      <div class="glass-border-gradient p-[1px]">
-        <div class="rounded-2xl bg-dark p-10 flex flex-col justify-between overflow-hidden relative">
+    <div class="sm:container">
+      <div class="sm:glass-border-gradient sm:p-[1px]">
+        <div class="rounded-b-2xl sm:rounded-2xl bg-dark px-4 py-8 sm:p-10 flex flex-col justify-between overflow-hidden relative">
           <div class="absolute top-0 left-0 h-full w-full bg-black/50 transition-all z-10" />
           <img
             src="https://remonline.app/uploads/wysiwyg/blog/img-preview/how-to-start-detailing-business-banner-min.webp?v=394"
@@ -10,10 +10,10 @@
             class="video-bg object-cover"
           >
           <div class="relative z-20">
-            <h1 class="text-white font-halvar text-4xl mb-6">
+            <h1 class="text-white font-halvar text-4xl mb-6 uppercase">
               Автовинил
             </h1>
-            <p class="text-white mb-6">
+            <p class="text-white mb-14 sm:mb-6">
               Мы предлагаем широкий выбор автовиниловых пленок высокого качества, <br>
               различных цветов, финишей и текстур. Наши опытные мастера с <br>
               готовностью помогут вам выбрать наиболее подходящий вариант и <br>
@@ -21,11 +21,11 @@
             </p>
           </div>
 
-          <div class="flex gap-4 relative z-20">
-            <button class="primary-btn !px-10 w-fit relative">
+          <div class="sm:flex gap-4 relative z-20 space-y-4">
+            <button class="primary-btn !px-10 w-full sm:w-fit relative">
               Узнать цены
             </button>
-            <button class="secondary-btn !px-10 w-fit relative">
+            <button class="secondary-btn !px-10 w-full sm:w-fit relative">
               Позвонить нам
             </button>
           </div>

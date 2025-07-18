@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="pt-[100px]">
+    <section class="pt-12 sm:pt-[100px]">
       <div class="container">
         <h2 class="font-halvar text-4xl text-white mb-4 font-bold">
           Контакты
@@ -9,7 +9,7 @@
           Спиоск контактов для связи
         </p>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div class="glass-border-gradient p-6 space-y-4 h-[17rem] flex flex-col justify-between">
+          <div class="glass-border-gradient p-6 space-y-4 h-[10rem] sm:h-[17rem] flex flex-col justify-between">
             <p class="font-halvar text-lg text-primary leading-5 relative">
               Адрес
             </p>
@@ -22,7 +22,7 @@
               </button>
             </div>
           </div>
-          <div class="glass-border-gradient p-6 space-y-4 h-[17rem] flex flex-col justify-between">
+          <div class="glass-border-gradient p-6 space-y-4 h-[10rem] sm:h-[17rem] flex flex-col justify-between">
             <p class="font-halvar text-lg text-primary leading-5 relative">
               Телефон
             </p>
@@ -33,7 +33,7 @@
               + 7 (921) 637-67-04
             </a>
           </div>
-          <div class="glass-border-gradient p-6 space-y-4 h-[17rem] flex flex-col justify-between">
+          <div class="glass-border-gradient p-6 space-y-4 h-[10rem] sm:h-[17rem] flex flex-col justify-between">
             <p class="font-halvar text-lg text-primary leading-5 relative">
               Социальные сети
             </p>

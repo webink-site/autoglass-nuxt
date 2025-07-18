@@ -23,6 +23,7 @@ export default {
         dark: '#191919',
         light: '#E5E5E5',
         input: '#252525',
+        dark_gray: '#252525',
       },
       fontSize: {
         '7xl': '42px',

@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <section class="pt-[100px]">
+  <section class="pt-12 sm:pt-[100px]">
     <div class="container">
       <h2
         v-gsap.entrance.slide-bottom
@@ -23,6 +23,7 @@
           <img
             :src="item.icon"
             alt=""
+            class="h-20 sm:h-34"
           >
           <p
             class="font-halvar text-lg text-white leading-5"

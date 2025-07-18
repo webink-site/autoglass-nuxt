@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative overflow-hidden">
     <LayoutHeader />
     <NuxtPage class="z-10 relative" />
     <LayoutFooter />
