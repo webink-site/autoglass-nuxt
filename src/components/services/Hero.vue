@@ -25,9 +25,11 @@
             <button class="primary-btn !px-10 w-full sm:w-fit relative">
               Узнать цены
             </button>
-            <button class="secondary-btn !px-10 w-full sm:w-fit relative">
-              Позвонить нам
-            </button>
+            <a href="tel:+79216376704">
+              <button class="secondary-btn !px-10 w-full sm:w-fit relative">
+                Позвонить нам
+              </button>
+            </a>
           </div>
         </div>
       </div>

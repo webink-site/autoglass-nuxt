@@ -6,7 +6,7 @@
   >
     <div
       v-if="selectedPhoto !== null"
-      class="h-[86%] relative"
+      class="h-auto sm:h-[86%] w-[90%] sm:w-auto relative"
       @click.stop
     >
       <img
@@ -15,7 +15,7 @@
         class="object-cover h-full w-auto mx-auto"
       >
       <button
-        class="secondary-btn absolute top-0 -right-14 !p-2"
+        class="secondary-btn absolute right-4 top-4 sm:-right-14 !p-2"
         @click="showLightbox = false"
       >
         <X class="size-6 text-primary" />

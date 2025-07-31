@@ -29,12 +29,14 @@
           </p>
         </div>
 
-        <button
-          v-gsap.entrance.slide-bottom.delay-600
-          class="secondary-btn !px-10 w-full sm:w-fit relative"
-        >
-          Позвонить нам
-        </button>
+        <a href="tel:+79216376704">
+          <button
+            v-gsap.entrance.slide-bottom.delay-600
+            class="secondary-btn !px-10 w-full sm:w-fit relative"
+          >
+            Позвонить нам
+          </button>
+        </a>
       </div>
     </div>
   </section>

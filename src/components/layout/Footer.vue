@@ -46,9 +46,17 @@
                 >+ 7 (921) 637-67-04</a>
               </li>
             </ul>
-            <button class="secondary-btn w-full sm:w-fit hidden sm:block">
-              Проложить маршрут на карте
-            </button>
+            <client-only>
+              <a
+                :href="yandexRouteLink"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button class="secondary-btn w-full sm:w-fit hidden sm:block">
+                  Проложить маршрут на карте
+                </button>
+              </a>
+            </client-only>
           </div>
           <div class="col-span-3">
             <h5 class="text-neutral-600 font-halvar text-xl mb-2.5">
@@ -66,9 +74,17 @@
                 >{{ item.title }}</a>
               </li>
             </ul>
-            <button class="secondary-btn w-full sm:w-fit sm:hidden mt-8">
-              Проложить маршрут на карте
-            </button>
+            <client-only>
+              <a
+                :href="yandexRouteLink"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button class="secondary-btn w-full sm:w-fit sm:hidden mt-8">
+                  Проложить маршрут на карте
+                </button>
+              </a>
+            </client-only>
           </div>
           <div class="col-span-full hidden sm:block">
             <img
@@ -83,6 +99,10 @@
 </template>
 
 <script setup lang="ts">
+import { useNavigator } from '~/src/composables/useNavigator'
+
+const { yandexRouteLink } = useNavigator()
+
 const servs = [
   { title: 'Замена и ремонт стекол', slug: 'vynil' },
   { title: 'Автовинил', slug: 'vynil' },

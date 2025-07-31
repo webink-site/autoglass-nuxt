@@ -17,12 +17,14 @@
         >
           Наши эксперты готовы предоставить <br class="hidden sm:block"> консультации по всем аспектам — от замена <br class="hidden sm:block"> и ремонта стекл, до шумоизоляции
         </p>
-        <button
-          v-gsap.entrance.slide-top.delay-200
-          class="secondary-btn !px-14"
-        >
-          Позвонить нам
-        </button>
+        <a href="tel:+79216376704">
+          <button
+            v-gsap.entrance.slide-top.delay-200
+            class="secondary-btn !px-14"
+          >
+            Позвонить нам
+          </button>
+        </a>
       </div>
     </div>
   </div>

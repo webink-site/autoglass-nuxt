@@ -22,7 +22,7 @@
             alt=""
             class="mx-auto"
           >
-          <p class="text-sm text-white">
+          <p class=" text-xs sm:text-sm text-white">
             {{ item.title }}
           </p>
         </div>

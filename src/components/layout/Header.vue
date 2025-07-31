@@ -55,10 +55,10 @@ const navs = [
     title: 'Услуги',
     link: '/services',
   },
-  {
-    title: 'Проекты',
-    link: '/projects',
-  },
+  // {
+  //   title: 'Проекты',
+  //   link: '/projects',
+  // },
   {
     title: 'Галерея работ',
     link: '/gallery',

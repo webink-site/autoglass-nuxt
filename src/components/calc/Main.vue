@@ -43,7 +43,7 @@
         </transition>
       </div>
       <button
-        class="secondary-btn absolute top-4 -right-14 !p-2"
+        class="secondary-btn absolute right-4 top-4 sm:-right-14 !p-2"
         @click="dialog = false"
       >
         <X class="size-6 text-primary" />

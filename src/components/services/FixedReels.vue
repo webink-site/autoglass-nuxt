@@ -7,7 +7,7 @@
     <div class="w-26 sm:w-40 aspect-10/16 bg-dark rounded-xl border-[2px] border-neutral-600 relative cursor-pointer group overflow-hidden">
       <PlayIcon class="fill-white size-10 top-1/2 left-1/2 -translate-1/2 absolute group-hover:opacity-50 transition-all z-20" />
       <video-background
-        src="https://glassgtn.ru/wp-content/themes/ag/assets/video.MP4"
+        src="http://localhost:3001/uploads/gallery/1753286442851_Eject.mp4"
         class="video-bg"
       />
     </div>
@@ -34,7 +34,7 @@
         muted
       >
         <source
-          src="https://glassgtn.ru/wp-content/themes/ag/assets/video.MP4"
+          src="http://localhost:3001/uploads/gallery/1753286442851_Eject.mp4"
           type="video/mp4"
         >
       </video>

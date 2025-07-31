@@ -10,6 +10,11 @@ export default defineNuxtConfig({
   ],
   components: ['~/src/components'],
   devtools: { enabled: true },
+  app: {
+    head: {
+      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    },
+  },
   css: ['~/src/assets/style.css'],
   dir: {
     assets: 'src/assets',
