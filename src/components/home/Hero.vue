@@ -4,11 +4,13 @@
   >
     <div class="sm:container">
       <div class="rounded-b-2xl sm:rounded-2xl h-[600px] sm:h-[774px] bg-dark p-4 sm:p-10 flex flex-col justify-between relative overflow-hidden">
-        <video-background
-          src="https://glassgtn.ru/wp-content/themes/ag/assets/video.MP4"
-          poster="/img/video_poster.png"
-          class="video-bg"
-        />
+        <client-only>
+          <video-background
+            src="https://glassgtn.ru/wp-content/themes/ag/assets/video.MP4"
+            poster="/img/gl.png"
+            class="video-bg"
+          />
+        </client-only>
         <div
           v-gsap.entrance.slide-top.delay-700
           class="relative"

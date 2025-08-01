@@ -15,22 +15,25 @@
       </p>
     </div>
 
-    <Vue3Marquee
-      :pause-on-hover="true"
-      :duration="50"
-    >
-      <div
-        v-for="(item, idx) in images"
-        :key="idx"
-        class="h-[26rem] sm:h-[40rem] sm:w-[26rem] shrink-0 mr-3 cursor-pointer"
-        @click="showLightbox = true; selectedPhoto = idx"
+    <client-only>
+      <Vue3Marquee
+        :pause-on-hover="true"
+        :duration="50"
       >
-        <img
-          :src="item"
-          class="h-full w-full object-cover rounded-2xl"
+        <div
+          v-for="(item, idx) in images"
+          :key="idx"
+          class="h-[26rem] sm:h-[40rem] sm:w-[26rem] shrink-0 mr-3 cursor-pointer"
+          @click="showLightbox = true; selectedPhoto = idx"
         >
-      </div>
-    </Vue3Marquee>
+          <img
+            :src="item"
+            class="h-full w-full object-cover rounded-2xl"
+          >
+        </div>
+      </Vue3Marquee>
+    </client-only>
+
     <teleport to="body">
       <transition name="fade-slide">
         <UiLigtbox

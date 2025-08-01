@@ -25,7 +25,7 @@
                 :key="idx"
               >
                 <nuxt-link
-                  :to="item.slug"
+                  :to="`/services/${item.slug}`"
                   class="text-white hover:text-primary"
                 >{{ item.title }}</nuxt-link>
               </li>
@@ -104,13 +104,13 @@ import { useNavigator } from '~/src/composables/useNavigator'
 const { yandexRouteLink } = useNavigator()
 
 const servs = [
-  { title: 'Замена и ремонт стекол', slug: 'vynil' },
-  { title: 'Автовинил', slug: 'vynil' },
-  { title: 'Оклейка кузова защитой пленкой', slug: 'vynil' },
-  { title: 'Замена и ремонт стекол', slug: 'vynil' },
-  { title: 'Химчистка салона', slug: 'vynil' },
-  { title: 'Тонирование', slug: 'vynil' },
-  { title: 'Шумоизоляция', slug: 'vynil' },
+  { title: 'Замена и ремонт стекол', slug: '123' },
+  { title: 'Автовинил', slug: '123' },
+  { title: 'Оклейка кузова защитой пленкой', slug: '123' },
+  { title: 'Замена и ремонт стекол', slug: '123' },
+  { title: 'Химчистка салона', slug: '123' },
+  { title: 'Тонирование', slug: '123' },
+  { title: 'Шумоизоляция', slug: '123' },
 ]
 
 const socials = [
