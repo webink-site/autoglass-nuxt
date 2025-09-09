@@ -2,7 +2,7 @@
   <section
     v-gsap.entrance.slide-bottom
   >
-    <div class="sm:container">
+    <div class="sm:container mx-auto">
       <div class="rounded-b-2xl sm:rounded-2xl h-[600px] sm:h-[774px] bg-dark p-4 sm:p-10 flex flex-col justify-between relative overflow-hidden">
         <client-only>
           <video-background

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="sm:container">
+    <div class="sm:container mx-auto">
       <div class="sm:glass-border-gradient sm:p-[1px]">
         <div class="rounded-b-2xl sm:rounded-2xl bg-dark px-4 py-8 sm:p-10 flex flex-col justify-between overflow-hidden relative">
           <div class="absolute top-0 left-0 h-full w-full bg-black/50 transition-all z-10" />
