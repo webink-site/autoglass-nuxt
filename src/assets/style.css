@@ -54,7 +54,7 @@
     @apply text-xs text-white px-2 py-1 sm:px-3 sm:py-2 border-[1.8px] border-white rounded-full sm:text-sm font-halvar 
   }
   .container{
-    @apply !mx-auto
+    @apply !mx-auto px-4
   }
   .sm:container{
     @apply !mx-auto
