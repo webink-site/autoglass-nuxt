@@ -20,7 +20,7 @@
           <p
             class="font-halvar text-lg text-white leading-5"
           >
-            {{ item.title }}
+            {{ item }}
           </p>
         </div>
       </div>
@@ -29,20 +29,9 @@
 </template>
 
 <script setup lang="ts">
-const advantages = [
-  {
-    title: 'Защита кузова от царапин, сколов и ультрафиолетовых лучей',
-  },
-  {
-    title: 'Возможность изменить цвет или дизайн автомобиля без окрашивания.',
-  },
-  {
-    title: 'Легкое удаление пленки без повреждения оригинальной краски.',
-  },
-  {
-    title: 'Долговечность и высокая степень защиты кузова',
-  },
-]
+const { advantages } = defineProps<{
+  advantages: string[]
+}>()
 </script>
 
 <style scoped>

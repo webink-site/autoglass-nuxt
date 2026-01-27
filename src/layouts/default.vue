@@ -15,7 +15,11 @@
 </template>
 
 <script setup lang="ts">
+import { useServicesStore } from '~/src/stores/services'
 
+const servicesStore = useServicesStore()
+
+await callOnce('services', () => servicesStore.FETCH_SERVICES())
 </script>
 
 <style scoped>

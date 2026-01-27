@@ -11,13 +11,10 @@
           >
           <div class="relative z-20">
             <h1 class="text-white font-halvar text-4xl mb-6 uppercase">
-              Автовинил
+              {{ title }}
             </h1>
             <p class="text-white mb-14 sm:mb-6">
-              Мы предлагаем широкий выбор автовиниловых пленок высокого качества, <br>
-              различных цветов, финишей и текстур. Наши опытные мастера с <br>
-              готовностью помогут вам выбрать наиболее подходящий вариант и <br>
-              превратить ваш автомобиль в уникальное произведение искусства.
+              {{ description }}
             </p>
           </div>
 
@@ -38,7 +35,10 @@
 </template>
 
 <script setup lang="ts">
-
+const { title, description } = defineProps<{
+  title: string
+  description: string
+}>()
 </script>
 
 <style scoped>

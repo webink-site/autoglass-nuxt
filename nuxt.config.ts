@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-swiper',
     'v-gsap-nuxt',
+    '@pinia/nuxt',
   ],
   components: ['~/src/components'],
   devtools: { enabled: true },
@@ -16,6 +17,11 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/src/assets/style.css'],
+  runtimeConfig: {
+    public: {
+      apiUrl: process.env.API_URL,
+    },
+  },
   dir: {
     assets: 'src/assets',
     public: 'public',
