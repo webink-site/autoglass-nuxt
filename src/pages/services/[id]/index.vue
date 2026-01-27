@@ -41,7 +41,7 @@ interface Service {
 }
 
 const config = useRuntimeConfig()
-const { data, error } = await useFetch<Service>(`${config.public.apiUrl}/services/${id}`, { server: false })
+const { data, error } = await useFetch<Service>(`${config.public.apiUrl}/services/${id}`, { server: true })
 
 if (error.value) {
   throw createError({
