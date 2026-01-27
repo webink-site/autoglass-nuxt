@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   css: ['~/src/assets/style.css'],
   runtimeConfig: {
     public: {
-      apiUrl: process.env.API_URL,
+      apiUrl: process.env.NUXT_PUBLIC_API_URL || process.env.API_URL || 'https://api.glassgtn.ru',
     },
   },
   dir: {
