@@ -59,15 +59,40 @@ export const useServicesStore = defineStore('services', {
   actions: {
     async FETCH_SERVICES() {
       const config = useRuntimeConfig()
-      try {
-        const response = await fetch(`${config.public.apiUrl}/services`)
+      this.loading = true
+      this.error = null
 
-        if (!response.ok) {
+      try {
+        const response = await fetch(`${config.public.apiUrl}/services`, {
+          cache: 'no-store', // Отключаем кеширование браузера
+          headers: {
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache',
+            'Expires': '0',
+          },
+        })
+
+        if (!response.ok && response.status !== 304) {
           throw new Error(`Ошибка при загрузке услуг: ${response.status}`)
         }
 
-        const data = await response.json()
-        this.services = data
+        // Если 304, делаем повторный запрос с игнорированием кеша
+        if (response.status === 304) {
+          const freshResponse = await fetch(`${config.public.apiUrl}/services`, {
+            cache: 'reload',
+          })
+
+          if (!freshResponse.ok) {
+            throw new Error(`Ошибка при загрузке услуг: ${freshResponse.status}`)
+          }
+
+          const data = await freshResponse.json()
+          this.services = data
+        }
+        else {
+          const data = await response.json()
+          this.services = data
+        }
       }
       catch (error) {
         this.error = error instanceof Error ? error.message : 'Ошибка при загрузке услуг'

@@ -41,7 +41,20 @@ interface Service {
 }
 
 const config = useRuntimeConfig()
-const { data, error } = await useFetch<Service>(`${config.public.apiUrl}/services/${id}`, { server: false })
+const { data, error } = await useFetch<Service>(
+  `${config.public.apiUrl}/services/${id}`,
+  {
+    server: false,
+    headers: {
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+    },
+    getCachedData: () => {
+      // Отключаем кеширование для этого запроса
+      return undefined
+    },
+  },
+)
 
 if (error.value) {
   throw createError({
