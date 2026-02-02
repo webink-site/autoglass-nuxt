@@ -6,9 +6,11 @@
           <h2 class="font-halvar text-4xl text-white mb-10">
             Что входит в услугу?
           </h2>
-          <p class="text-white mb-6">
-            {{ longDescription }}
-          </p>
+          <!-- {{ longDescription }} -->
+          <div
+            class="text-white mb-6 nuxt-content"
+            v-html="longDescription"
+          />
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@
   >
     <ServicesHero
       :title="data.name"
+      :header-image="data.headerImage?.imageUrl ?? null"
       :description="data.description"
     />
     <ServicesAdvantages :advantages="data.advantages" />
@@ -32,6 +33,7 @@ interface Service {
   longDescription: string
   cardImageId: number | null
   headerImageId: number | null
+  headerImage?: { imageUrl: string } | null
   videoId: number | null
   cardImage?: string
   createdAt: string

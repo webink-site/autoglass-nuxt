@@ -14,8 +14,8 @@
           v-for="(item, idx) in types"
           :key="idx"
           class="glass-border-gradient p-2 text-center space-y-2 cursor-pointer select-none"
-          :class="{ active: selectedType === item.title }"
-          @click="selectedType = item.title"
+          :class="{ active: selectedType === item.transportType }"
+          @click="selectedType = item.transportType"
         >
           <img
             :src="item.icon"
@@ -35,10 +35,10 @@
           v-for="(item, idx) in packages"
           :key="idx"
           class="outlined-btn"
-          :class="{ 'bg-primary !border-primary': [...selectedElements].sort((a, b) => a - b).join('') === item.elements.join('') }"
-          @click="selectedElements = [...item.elements]"
+          :class="{ 'bg-primary !border-primary': [...selectedElements].sort((a, b) => a - b).join('') === item.elementIds.join('') }"
+          @click="selectedElements = [...item.elementIds]"
         >
-          {{ item.title }}
+          {{ item.name }}
         </button>
       </div>
       <p class="text-white mb-4">
@@ -52,8 +52,11 @@
           :class="{ 'bg-primary !border-primary': selectedElements.includes(item.id) }"
           @click="handleElement(item.id)"
         >
-          {{ item.title }}
+          {{ item.name }}
         </button>
+      </div>
+      <div class="text-neutral-600 ">
+        В местах соприкосновения эл-ов подворот пленки не производится!
       </div>
       <button
         class="w-full primary-btn mb-2.5"
@@ -70,15 +73,17 @@
 </template>
 
 <script setup lang="ts">
+import type { TransportType } from '~/src/stores/services'
+
 const emit = defineEmits(['changeSlide'])
 
-const selectedType = defineModel<null | string>('selectedType')
+const selectedType = defineModel<TransportType | null>('selectedType')
 const selectedElements = defineModel<number[]>('selectedElements', { default: [] })
 
 type Props = {
-  types: { title: string, icon: string }[]
-  packages: { title: string, elements: number[] }[]
-  elements: { title: string, id: number, price: number }[]
+  types: { title: string, icon: string, transportType: TransportType }[]
+  packages: { name: string, elementIds: number[], id: number }[]
+  elements: { name: string, id: number, prices: { transportType: TransportType, price: number }[] }[]
 }
 const { types, packages, elements } = defineProps<Props>()
 

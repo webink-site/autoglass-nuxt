@@ -18,7 +18,7 @@
         class="flex justify-between items-center text-white"
       >
         <p>{{ item.title }}</p>
-        <p>{{ item.price }}  ₽</p>
+        <p>{{ formatPrice(item.price) }} ₽</p>
       </div>
     </div>
     <hr class="my-4 border-neutral-800">
@@ -27,7 +27,7 @@
     </p>
     <div class="font-halvar text-lg text-white leading-5 justify-between flex items-center mt-4">
       <span>Итоговая стоимость</span>
-      <span>{{ totalPrice }} ₽</span>
+      <span>{{ formatPrice(totalPrice) }} ₽</span>
     </div>
     <button
       class="w-full primary-btn mb-2.5 mt-6"
@@ -60,6 +60,11 @@ const filteredElements = computed(() =>
 const totalPrice = computed(() =>
   filteredElements.value.reduce((a, b) => a + b.price, 0),
 )
+
+// Форматируем цену с пробелами
+const formatPrice = (price: number): string => {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+}
 </script>
 
 <style scoped>

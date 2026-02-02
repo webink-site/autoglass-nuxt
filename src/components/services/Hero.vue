@@ -5,7 +5,7 @@
         <div class="rounded-b-2xl sm:rounded-2xl bg-dark px-4 py-8 sm:p-10 flex flex-col justify-between overflow-hidden relative">
           <div class="absolute top-0 left-0 h-full w-full bg-black/50 transition-all z-10" />
           <img
-            src="https://remonline.app/uploads/wysiwyg/blog/img-preview/how-to-start-detailing-business-banner-min.webp?v=394"
+            :src="`${config.public.apiUrl}${headerImage}`"
             alt=""
             class="video-bg object-cover"
           >
@@ -13,7 +13,7 @@
             <h1 class="text-white font-halvar text-4xl mb-6 uppercase">
               {{ title }}
             </h1>
-            <p class="text-white mb-14 sm:mb-6">
+            <p class="text-white mb-14 sm:mb-6 md:max-w-1/2">
               {{ description }}
             </p>
           </div>
@@ -35,8 +35,10 @@
 </template>
 
 <script setup lang="ts">
-const { title, description } = defineProps<{
+const config = useRuntimeConfig()
+const { title, description, headerImage } = defineProps<{
   title: string
+  headerImage: string | null
   description: string
 }>()
 </script>
