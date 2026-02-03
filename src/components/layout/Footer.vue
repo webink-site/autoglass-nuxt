@@ -92,14 +92,6 @@
               </a>
             </client-only>
           </div>
-          <div class="col-span-full pt-4 border-t border-neutral-700 mt-4">
-            <nuxt-link
-              to="/politika-konfidencialnosti"
-              class="text-neutral-500 hover:text-primary text-sm"
-            >
-              Политика конфиденциальности
-            </nuxt-link>
-          </div>
           <div class="col-span-full hidden sm:block">
             <img
               src="/img/footer.svg"
