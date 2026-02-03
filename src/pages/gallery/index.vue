@@ -52,6 +52,8 @@
 </template>
 
 <script setup lang="ts">
+import { useSiteUrl } from '~/src/composables/useSiteUrl'
+
 const config = useRuntimeConfig()
 const showLightbox = ref(false)
 const selectedPhoto = ref<number | null>(null)
@@ -135,13 +137,16 @@ const images = computed(() => {
   return imageItems.value.map(item => `${config.public.apiUrl}${item.imageUrl}`)
 })
 
+const baseUrl = (config.public.siteUrl as string) || useSiteUrl()
+
 useSeoMeta({
   title: 'Галерея работ детейлинг центра Autoglass в Гатчине',
   ogTitle: 'Галерея работ детейлинг центра Autoglass в Гатчине',
   description: 'Галерея работ детейлинг центра Autoglass в Гатчине: полировка кузова, химчистка салона, защита лакокрасочного покрытия, оклейка плёнкой и уход за автомобилем в Autoglass.',
   ogDescription: 'Галерея работ детейлинг центра Autoglass в Гатчине: полировка кузова, химчистка салона, защита лакокрасочного покрытия, оклейка плёнкой и уход за автомобилем в Autoglass.',
   ogType: 'website',
-  ogImage: '/img/ogImg.webp',
+  ogImage: baseUrl ? `${baseUrl}/img/ogImg.webp` : '/img/ogImg.webp',
+  ogUrl: baseUrl ? `${baseUrl}/gallery` : undefined,
 })
 </script>
 

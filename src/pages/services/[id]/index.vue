@@ -25,6 +25,7 @@
 
 <script setup lang="ts">
 import type { ServicePrice } from '~/src/stores/services'
+import { useSiteUrl } from '~/src/composables/useSiteUrl'
 
 const route = useRoute()
 const id = route.params.id
@@ -61,13 +62,19 @@ const scrollToPrices = () => {
   useGSAP().to(window, { scrollTo: '#prices', duration: 0.6, ease: 'power2.out' })
 }
 
+const baseUrl = (config.public.siteUrl as string) || useSiteUrl()
+
 useSeoMeta({
   title: () => `${data.value?.name} - Услуги детейлинг центра Autoglass в Гатчине`,
   ogTitle: () => `${data.value?.name} - Услуги детейлинг центра Autoglass в Гатчине`,
   description: () => `${data.value?.description}`,
   ogDescription: () => `${data.value?.description}`,
   ogType: 'website',
-  ogImage: () => `${config.public.apiUrl}${data.value?.cardImage?.imageUrl}`,
+  ogImage: () => {
+    const img = data.value?.cardImage?.imageUrl
+    return img ? `${config.public.apiUrl}${img}` : (baseUrl ? `${baseUrl}/img/ogImg.webp` : '/img/ogImg.webp')
+  },
+  ogUrl: () => (baseUrl && route.path ? `${baseUrl}${route.path}` : undefined),
 })
 </script>
 

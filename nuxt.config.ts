@@ -20,6 +20,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiUrl: process.env.NUXT_PUBLIC_API_URL || process.env.API_URL || 'https://api.glassgtn.ru',
+      /** Абсолютный URL сайта для og:image и og:url (например https://glassgtn.ru). Рекомендуется задать в продакшене. */
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || '',
     },
   },
   dir: {

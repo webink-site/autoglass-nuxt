@@ -60,13 +60,18 @@
 </template>
 
 <script setup lang="ts">
+import { useSiteUrl } from '~/src/composables/useSiteUrl'
+
+const baseUrl = (useRuntimeConfig().public.siteUrl as string) || useSiteUrl()
+
 useSeoMeta({
   title: 'Контакты детейлинг центра Autoglass в Гатчине',
   ogTitle: 'Контакты детейлинг центра Autoglass в Гатчине',
   description: 'Контакты детейлинг центра Autoglass в Гатчине: адрес, телефон, социальные сети.',
   ogDescription: 'Контакты детейлинг центра Autoglass в Гатчине: адрес, телефон, социальные сети.',
   ogType: 'website',
-  ogImage: '/img/ogImg.webp',
+  ogImage: baseUrl ? `${baseUrl}/img/ogImg.webp` : '/img/ogImg.webp',
+  ogUrl: baseUrl ? `${baseUrl}/contacts` : undefined,
 })
 </script>
 

@@ -140,12 +140,18 @@
 </template>
 
 <script setup lang="ts">
+import { useSiteUrl } from '~/src/composables/useSiteUrl'
+
+const baseUrl = (useRuntimeConfig().public.siteUrl as string) || useSiteUrl()
+
 useSeoMeta({
   title: 'Политика конфиденциальности — Autoglass',
   description: 'Политика конфиденциальности детейлинг центра Autoglass. ИП Ковалышкин Егор Евгеньевич. Обработка персональных данных.',
   ogTitle: 'Политика конфиденциальности — Autoglass',
   ogDescription: 'Политика конфиденциальности детейлинг центра Autoglass. ИП Ковалышкин Егор Евгеньевич.',
   ogType: 'website',
+  ogImage: baseUrl ? `${baseUrl}/img/ogImg.webp` : '/img/ogImg.webp',
+  ogUrl: baseUrl ? `${baseUrl}/privacy-policy` : undefined,
 })
 </script>
 
