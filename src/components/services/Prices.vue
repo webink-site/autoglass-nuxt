@@ -1,6 +1,7 @@
 <template>
   <section
     v-if="prices && prices.length > 0"
+    id="prices"
     class="pt-12 sm:pt-[100px]"
   >
     <div class="container">

@@ -7,13 +7,17 @@
       :title="data.name"
       :header-image="data.cardImage?.imageUrl ?? null"
       :description="data.description"
+      @scroll-to-prices="scrollToPrices"
     />
     <ServicesAdvantages :advantages="data.advantages" />
     <ServicesAbout :long-description="data.longDescription" />
     <ServicesPrices :prices="data.prices" />
     <HomeGallery />
     <HomeVoprosy />
-    <teleport to="body">
+    <teleport
+      v-if="data.videoId && data.video"
+      to="body"
+    >
       <ServicesFixedReels />
     </teleport>
   </div>
@@ -34,6 +38,7 @@ interface Service {
   cardImageId: number | null
   headerImageId: number | null
   headerImage?: { imageUrl: string } | null
+  video?: { videoUrl: string } | null
   videoId: number | null
   cardImage?: { imageUrl: string } | null
   createdAt: string
@@ -50,6 +55,10 @@ if (error.value) {
     statusCode: 404,
     statusMessage: 'Service not found',
   })
+}
+
+const scrollToPrices = () => {
+  useGSAP().to(window, { scrollTo: '#prices', duration: 0.6, ease: 'power2.out' })
 }
 </script>
 

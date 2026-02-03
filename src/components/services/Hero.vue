@@ -19,7 +19,10 @@
           </div>
 
           <div class="sm:flex gap-4 relative z-20 space-y-4 sm:space-y-0">
-            <button class="primary-btn !px-10 w-full sm:w-fit relative">
+            <button
+              class="primary-btn !px-10 w-full sm:w-fit relative"
+              @click="emit('scrollToPrices')"
+            >
               Узнать цены
             </button>
             <a href="tel:+79216376704">
@@ -35,6 +38,8 @@
 </template>
 
 <script setup lang="ts">
+const emit = defineEmits(['scrollToPrices'])
+
 const config = useRuntimeConfig()
 const { title, description, headerImage } = defineProps<{
   title: string
