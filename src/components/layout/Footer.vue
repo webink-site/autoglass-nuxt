@@ -37,7 +37,7 @@
             </h5>
             <ul class="space-y-3 sm:mb-12">
               <li class="text-white">
-                ул. 7-ой Армии 22, Гатчина
+                ул. 7-ой Армии 24А, Гатчина
               </li>
               <li>
                 <a

@@ -15,7 +15,7 @@
             </p>
             <div class="space-y-4">
               <p class="font-halvar text-lg text-white leading-5 relative">
-                ул. 7-ой Армии 22, Гатчина
+                ул. 7-ой Армии 24А, Гатчина
               </p>
               <button class="secondary-btn !px-10">
                 Построить маршрут

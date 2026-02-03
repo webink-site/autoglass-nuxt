@@ -14,6 +14,16 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+      // Дефолтные OG для главной и на случай, когда useRequestURL() на "/" не даёт origin (пререндер/кэш)
+      ...(process.env.NUXT_PUBLIC_SITE_URL && {
+        meta: [
+          { property: 'og:image', content: `${process.env.NUXT_PUBLIC_SITE_URL}/img/ogImg.webp` },
+          { property: 'og:image:secure_url', content: `${process.env.NUXT_PUBLIC_SITE_URL}/img/ogImg.webp` },
+          { property: 'og:type', content: 'website' },
+          { property: 'og:title', content: 'Детейлинг центр №1 в Ленинградской области' },
+          { property: 'og:description', content: 'Мы оказываем весь спектр услуг, в котором нуждается Ваш автомобиль: тонировка, замена и ремонт автостекол, оклейка защитной пленкой и многое другое' },
+        ],
+      }),
     },
   },
   css: ['~/src/assets/style.css'],

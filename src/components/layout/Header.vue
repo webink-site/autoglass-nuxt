@@ -28,7 +28,7 @@
         </div>
         <div class="flex items-center justify-end gap-8">
           <p class="text-white">
-            ул. 7-ой Армии 22, Гатчина
+            ул. 7-ой Армии 24А, Гатчина
           </p>
           <a class="text-white hover:text-primary">+ 7 (921) 637-67-04</a>
           <button
