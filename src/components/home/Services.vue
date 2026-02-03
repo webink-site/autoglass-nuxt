@@ -17,7 +17,7 @@
         <nuxt-link
           v-for="(item, index) in servicesStore.services"
           :key="index"
-          :class="index <= 2 ? 'sm:col-span-4' : 'sm:col-span-3'"
+          :class="index <= 2 ? 'sm:col-span-4' : (index > 5 ? 'sm:col-span-6' : 'sm:col-span-4')"
           :to="`/services/${item.id}`"
         >
           <div class="glass-border-gradient p-6 space-y-4 h-[17rem] sm:h-[26rem] relative group">
@@ -54,51 +54,6 @@ const {
   title?: string
   subtitle?: string
 }>()
-
-// const services = [
-//   {
-//     title: 'Автовинил',
-//     img: 'https://glassgtn.ru/wp-content/uploads/2021/04/img_20220730_132619-scaled.jpg',
-//     col: 'sm:col-span-4',
-//     slug: 'serv1',
-//   },
-//   {
-//     title: 'Полировка кузова',
-//     img: 'https://glassgtn.ru/wp-content/uploads/2021/04/img_20220730_132619-scaled.jpg',
-//     col: 'sm:col-span-4',
-//     slug: 'serv1',
-//   },
-//   {
-//     title: 'Замена и ремонт автостекл',
-//     img: 'https://glassgtn.ru/wp-content/uploads/2021/04/img_20220730_132619-scaled.jpg',
-//     col: 'sm:col-span-4',
-//     slug: 'serv1',
-//   },
-//   {
-//     title: 'Химчистка салона',
-//     img: 'https://glassgtn.ru/wp-content/uploads/2021/04/img_20220730_132619-scaled.jpg',
-//     col: 'sm:col-span-3',
-//     slug: 'serv1',
-//   },
-//   {
-//     title: 'Тонирование',
-//     img: 'https://glassgtn.ru/wp-content/uploads/2021/04/img_20220730_132619-scaled.jpg',
-//     col: 'sm:col-span-3',
-//     slug: 'serv1',
-//   },
-//   {
-//     title: 'Оклейка кузова защитной пленкой',
-//     img: 'https://glassgtn.ru/wp-content/uploads/2021/04/img_20220730_132619-scaled.jpg',
-//     col: 'sm:col-span-3',
-//     slug: 'serv1',
-//   },
-//   {
-//     title: 'Шумоизоляция салона',
-//     img: 'https://glassgtn.ru/wp-content/uploads/2021/04/img_20220730_132619-scaled.jpg',
-//     col: 'sm:col-span-3',
-//     slug: 'serv1',
-//   },
-// ]
 </script>
 
 <style scoped>

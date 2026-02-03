@@ -5,13 +5,13 @@
   >
     <ServicesHero
       :title="data.name"
-      :header-image="data.headerImage?.imageUrl ?? null"
+      :header-image="data.cardImage?.imageUrl ?? null"
       :description="data.description"
     />
     <ServicesAdvantages :advantages="data.advantages" />
     <ServicesAbout :long-description="data.longDescription" />
     <ServicesPrices :prices="data.prices" />
-    <HomeGallery :gallery="data.galleryItems" />
+    <HomeGallery />
     <HomeVoprosy />
     <teleport to="body">
       <ServicesFixedReels />
@@ -35,7 +35,7 @@ interface Service {
   headerImageId: number | null
   headerImage?: { imageUrl: string } | null
   videoId: number | null
-  cardImage?: string
+  cardImage?: { imageUrl: string } | null
   createdAt: string
   updatedAt: string
   prices?: ServicePrice[]
