@@ -18,7 +18,7 @@
             </p>
           </div>
 
-          <div class="sm:flex gap-4 relative z-20 space-y-4 sm:space-y-0 max-w-1/2 flex-wrap">
+          <div class="sm:flex gap-4 relative z-20 space-y-4 sm:space-y-0 md:max-w-1/2 flex-wrap">
             <button
               class="primary-btn !px-10 w-full sm:w-fit relative"
               @click="emit('scrollToPrices')"
