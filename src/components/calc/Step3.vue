@@ -2,6 +2,7 @@
   <div>
     <div class="space-y-6 mb-6">
       <button
+        v-if="showBackButton"
         class="secondary-btn !rounded-lg !p-1"
         @click="emit('previousSlide')"
       >
@@ -55,8 +56,11 @@
     >
       Записаться на обслуживание
     </button>
-    <p class="text-white text-center">
-      <span class="text-primary">3</span> из 3
+    <p
+      v-if="showStepCounter"
+      class="text-white text-center"
+    >
+      <span class="text-primary">{{ stepNumber || 3 }}</span> из {{ totalSteps || 3 }}
     </p>
   </div>
 </template>
@@ -69,6 +73,18 @@ const emit = defineEmits(['changeSlide', 'previousSlide', 'submit'])
 const name = defineModel<string>('name')
 const phone = defineModel<string>('phone')
 const checked = ref(false)
+
+withDefaults(defineProps<{
+  showBackButton?: boolean
+  showStepCounter?: boolean
+  stepNumber?: number
+  totalSteps?: number
+}>(), {
+  showBackButton: true,
+  showStepCounter: true,
+  stepNumber: 3,
+  totalSteps: 3,
+})
 
 const errors = ref({
   name: '',

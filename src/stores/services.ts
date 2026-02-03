@@ -24,6 +24,7 @@ export interface ServicePrice {
 
 interface Service {
   id: number
+  slug: string
   name: string
   description: string
   advantages: string[]

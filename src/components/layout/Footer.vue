@@ -19,15 +19,15 @@
             <h5 class="text-neutral-600 font-halvar text-xl mb-2.5">
               Услуги
             </h5>
-            <ul class="space-y-3 ">
+            <ul class="space-y-3 columns-2">
               <li
-                v-for="(item, idx) in servs"
+                v-for="(item, idx) in servicesStore.services"
                 :key="idx"
               >
                 <nuxt-link
                   :to="`/services/${item.slug}`"
                   class="text-white hover:text-primary"
-                >{{ item.title }}</nuxt-link>
+                >{{ item.name }}</nuxt-link>
               </li>
             </ul>
           </div>
@@ -106,18 +106,10 @@
 
 <script setup lang="ts">
 import { useNavigator } from '~/src/composables/useNavigator'
+import { useServicesStore } from '~/src/stores/services'
 
 const { yandexRouteLink } = useNavigator()
-
-const servs = [
-  { title: 'Замена и ремонт стекол', slug: '123' },
-  { title: 'Автовинил', slug: '123' },
-  { title: 'Оклейка кузова защитой пленкой', slug: '123' },
-  { title: 'Замена и ремонт стекол', slug: '123' },
-  { title: 'Химчистка салона', slug: '123' },
-  { title: 'Тонирование', slug: '123' },
-  { title: 'Шумоизоляция', slug: '123' },
-]
+const servicesStore = useServicesStore()
 
 const socials = [
   { title: 'Вконтакте', link: 'https://vk.com/autoglassgtn' },

@@ -31,21 +31,32 @@
           </p>
         </div>
 
-        <a href="tel:+79216376704">
+        <div class="flex gap-4">
+          <a href="tel:+79216376704">
+            <button
+              v-gsap.entrance.slide-bottom.delay-600
+              class="secondary-btn !px-10 w-full sm:w-fit relative"
+            >
+              Позвонить нам
+            </button>
+          </a>
           <button
             v-gsap.entrance.slide-bottom.delay-600
-            class="secondary-btn !px-10 w-full sm:w-fit relative"
+            class="primary-btn !px-10 w-full sm:w-fit relative"
+            @click="uiStore.handleCalcDialog(true)"
           >
-            Позвонить нам
+            Рассчитать стоимость оклейки
           </button>
-        </a>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import { useUiStore } from '~/src/stores/ui'
 
+const uiStore = useUiStore()
 </script>
 
 <style scoped>

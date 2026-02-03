@@ -18,18 +18,33 @@
             </p>
           </div>
 
-          <div class="sm:flex gap-4 relative z-20 space-y-4 sm:space-y-0">
+          <div class="sm:flex gap-4 relative z-20 space-y-4 sm:space-y-0 max-w-1/2 flex-wrap">
             <button
               class="primary-btn !px-10 w-full sm:w-fit relative"
               @click="emit('scrollToPrices')"
             >
               Узнать цены
             </button>
-            <a href="tel:+79216376704">
+            <!-- <a href="tel:+79216376704">
               <button class="secondary-btn !px-10 w-full sm:w-fit relative">
                 Позвонить нам
               </button>
-            </a>
+            </a> -->
+            <button
+              v-if="route.params.id === 'oklejka'"
+              class="secondary-btn !px-10 w-full sm:w-fit relative"
+              @click="uiStore.handleCalcDialog(true)"
+            >
+              Рассчитать стоимость оклейки
+            </button>
+            <button
+              v-else
+              v-gsap.entrance.slide-bottom.delay-600
+              class="secondary-btn !px-10 w-full sm:w-fit relative"
+              @click="uiStore.handleServiceOrderDialog(true, title)"
+            >
+              Отправить заявку
+            </button>
           </div>
         </div>
       </div>
@@ -38,7 +53,11 @@
 </template>
 
 <script setup lang="ts">
+import { useUiStore } from '~/src/stores/ui'
+
+const uiStore = useUiStore()
 const emit = defineEmits(['scrollToPrices'])
+const route = useRoute()
 
 const config = useRuntimeConfig()
 const { title, description, headerImage } = defineProps<{
