@@ -134,6 +134,15 @@ const imageItems = computed(() => {
 const images = computed(() => {
   return imageItems.value.map(item => `${config.public.apiUrl}${item.imageUrl}`)
 })
+
+useSeoMeta({
+  title: 'Галерея работ детейлинг центра Autoglass в Гатчине',
+  ogTitle: 'Галерея работ детейлинг центра Autoglass в Гатчине',
+  description: 'Галерея работ детейлинг центра Autoglass в Гатчине: полировка кузова, химчистка салона, защита лакокрасочного покрытия, оклейка плёнкой и уход за автомобилем в Autoglass.',
+  ogDescription: 'Галерея работ детейлинг центра Autoglass в Гатчине: полировка кузова, химчистка салона, защита лакокрасочного покрытия, оклейка плёнкой и уход за автомобилем в Autoglass.',
+  ogType: 'website',
+  ogImage: '/img/ogImg.webp',
+})
 </script>
 
 <style scoped>

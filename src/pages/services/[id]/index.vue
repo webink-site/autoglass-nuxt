@@ -60,6 +60,15 @@ if (error.value) {
 const scrollToPrices = () => {
   useGSAP().to(window, { scrollTo: '#prices', duration: 0.6, ease: 'power2.out' })
 }
+
+useSeoMeta({
+  title: () => `${data.value?.name} - Услуги детейлинг центра Autoglass в Гатчине`,
+  ogTitle: () => `${data.value?.name} - Услуги детейлинг центра Autoglass в Гатчине`,
+  description: () => `${data.value?.description}`,
+  ogDescription: () => `${data.value?.description}`,
+  ogType: 'website',
+  ogImage: () => `${config.public.apiUrl}${data.value?.cardImage?.imageUrl}`,
+})
 </script>
 
 <style scoped>
