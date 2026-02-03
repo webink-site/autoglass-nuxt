@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     'nuxt-swiper',
     'v-gsap-nuxt',
     '@pinia/nuxt',
+    '@nuxtjs/sitemap',
   ],
   components: ['~/src/components'],
   devtools: { enabled: true },
@@ -52,5 +53,8 @@ export default defineNuxtConfig({
     config: {
       stylistic: true,
     },
+  },
+  sitemap: {
+    sources: ['/api/__sitemap__/urls'],
   },
 })
