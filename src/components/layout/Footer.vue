@@ -5,16 +5,23 @@
         class="glass-border-gradient p-8"
       >
         <div class="grid grid-cols-3 sm:grid-cols-12 gap-8">
-          <nuxt-link
-            to="/"
-            class="col-span-3"
-          >
-            <img
-              src="/img/agred.svg"
-              alt=""
-              class="!h-12 sm:!h-24"
+          <div class="col-span-3 flex gap-4 sm:block">
+            <nuxt-link
+              to="/"
             >
-          </nuxt-link>
+              <img
+                src="/img/agred.svg"
+                alt=""
+                class="!h-16 sm:!h-24 sm:mb-4"
+              >
+            </nuxt-link>
+            <iframe
+              src="https://yandex.ru/sprav/widget/rating-badge/211201754591?type=award"
+              width="150"
+              height="50"
+              frameborder="0"
+            />
+          </div>
           <div class="col-span-3">
             <h5 class="text-neutral-600 font-halvar text-xl mb-2.5">
               Услуги
