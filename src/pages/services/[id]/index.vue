@@ -20,13 +20,23 @@
     >
       <ServicesFixedReels />
     </teleport>
+    <teleport to="body">
+      <transition name="fade-slide">
+        <ServicesServiceOrder
+          v-model:dialog="uiStore.serviceOrderDialog"
+          :service-name="uiStore.serviceOrderName"
+        />
+      </transition>
+    </teleport>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { ServicePrice } from '~/src/stores/services'
 import { useSiteUrl } from '~/src/composables/useSiteUrl'
+import { useUiStore } from '~/src/stores/ui'
 
+const uiStore = useUiStore()
 const route = useRoute()
 const id = route.params.id
 

@@ -18,7 +18,7 @@
           v-for="(item, index) in servicesStore.services"
           :key="index"
           :class="index <= 2 ? 'sm:col-span-4' : (index > 5 ? 'sm:col-span-6' : 'sm:col-span-4')"
-          :to="`/services/${item.id}`"
+          :to="`/services/${item.slug}`"
         >
           <div class="glass-border-gradient p-6 space-y-4 h-[17rem] sm:h-[26rem] relative group">
             <div class="absolute top-[1.5px] left-[1.5px] h-card_img_h w-card_img_w rounded-2xl overflow-hidden ">

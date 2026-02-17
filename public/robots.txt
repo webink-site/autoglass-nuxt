@@ -1,2 +1,15 @@
 User-Agent: *
-Disallow:
+Allow: /
+
+Disallow: /api/
+Disallow: /_nuxt/
+Disallow: /.nuxt/
+
+User-Agent: Googlebot
+Allow: /
+
+User-Agent: Yandex
+Allow: /
+
+User-Agent: Bingbot
+Allow: /

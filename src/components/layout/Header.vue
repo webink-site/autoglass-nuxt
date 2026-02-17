@@ -1,5 +1,5 @@
 <template>
-  <LayoutMobileMenu v-model:show-calc="showCalc" />
+  <LayoutMobileMenu v-model:show-calc="uiStore.calcDialog" />
   <div class="hidden sm:block sticky top-10 left-0 w-full z-30">
     <div class="container">
       <div class="glass-border-gradient px-6 py-4 rounded-2xl flex justify-between items-center">
@@ -33,23 +33,25 @@
           <a class="text-white hover:text-primary">+ 7 (921) 637-67-04</a>
           <button
             class="primary-btn"
-            @click="showCalc = true"
+            @click="uiStore.handleCalcDialog(true)"
           >
-            Рассчитать стоимость
+            Рассчитать стоимость оклейки
           </button>
         </div>
       </div>
     </div>
     <teleport to="body">
       <transition name="fade-slide">
-        <CalcMain v-model:dialog="showCalc" />
+        <CalcMain v-model:dialog="uiStore.calcDialog" />
       </transition>
     </teleport>
   </div>
 </template>
 
 <script setup lang="ts">
-const showCalc = ref(false)
+import { useUiStore } from '~/src/stores/ui'
+
+const uiStore = useUiStore()
 const navs = [
   {
     title: 'Услуги',

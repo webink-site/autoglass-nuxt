@@ -59,7 +59,7 @@
             class="primary-btn block w-full"
             @click="showCalc = true"
           >
-            Рассчитать стоимость
+            Рассчитать стоимость оклейки
           </button>
         </div>
       </div>
