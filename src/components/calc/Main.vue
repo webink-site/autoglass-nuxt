@@ -178,7 +178,7 @@ const handleFormSubmit = async (formData: { name: string, phone: string }) => {
   try {
     const message = buildMessage()
 
-    const response = await fetch(`${config.public.apiUrl}/form/vk`, {
+    const response = await fetch(`${config.public.apiUrl}/form/telegram`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
